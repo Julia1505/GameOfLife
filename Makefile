@@ -1,5 +1,6 @@
 TARGET = ./game_of_life.out
 SRC = src/game_of_life.c
+DIR_FOR_INIT_FILES=init_files
 
 .PHONY: all clean build rebuild check memcheck 1 2 3 4 5 6
 
@@ -20,25 +21,25 @@ check:
 
 
 memcheck:
-	cat src/1.txt /dev/stdin | leaks -atExit -- $(TARGET)
+	cat $(DIR_FOR_INIT_FILES)/1.txt /dev/stdin | leaks -atExit -- $(TARGET)
 
 testing:
-	cat src/test1.txt /dev/stdin | $(TARGET)
+	cat $(DIR_FOR_INIT_FILES)/test1.txt /dev/stdin | $(TARGET)
 
 1:
-	cat src/1.txt /dev/stdin | $(TARGET)
+	cat $(DIR_FOR_INIT_FILES)/1.txt /dev/stdin | $(TARGET)
 
 2:
-	cat src/2.txt /dev/stdin | $(TARGET)
+	cat $(DIR_FOR_INIT_FILES)/2.txt /dev/stdin | $(TARGET)
 
 3:
-	cat src/3.txt /dev/stdin | $(TARGET)
+	cat $(DIR_FOR_INIT_FILES)/3.txt /dev/stdin | $(TARGET)
 
 4:
-	cat src/4.txt /dev/stdin | $(TARGET)
+	cat $(DIR_FOR_INIT_FILES)/4.txt /dev/stdin | $(TARGET)
 
 5:
-	cat src/5.txt /dev/stdin | $(TARGET)
+	cat $(DIR_FOR_INIT_FILES)/5.txt /dev/stdin | $(TARGET)
 
 6:
-	cat src/6.txt /dev/stdin | $(TARGET)
+	cat $(DIR_FOR_INIT_FILES)/6.txt /dev/stdin | $(TARGET)
